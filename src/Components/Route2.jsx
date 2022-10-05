@@ -1,10 +1,15 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
-import { Root } from "./src/Root";
-export default function App() {
+import { useParams } from "react-router-dom";
+
+export function Route2() {
+  const { routeId } = useParams();
+
   return (
     <View style={styles.container}>
-      <Root />
+      <Text>ROUTE 2 FTW!!!!!!</Text>
+      <Text>RouteId: {routeId}</Text>
+      <StatusBar style="auto" />
     </View>
   );
 }
