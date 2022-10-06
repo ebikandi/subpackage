@@ -1,6 +1,6 @@
 {
   "name": "native-subpackage",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "build/index.js",
   "scripts": {
     "start": "expo start --web",
@@ -25,5 +25,13 @@
   },
   "devDependencies": {
     "@babel/core": "^7.19.3"
+  },
+  "peerDependencies": {
+    "react": "18.0.0",
+    "react-dom": "18.0.0",
+    "react-native": "0.69.6",
+    "react-native-web": "~0.18.7",
+    "react-router-dom": "^6.4.1",
+    "react-router-native": "^6.4.1"
   }
 }
