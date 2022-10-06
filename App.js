@@ -1,10 +1,14 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
-import { Root } from "./src/Root";
+import { SubRoot } from "./src/SubRoot";
 export default function App() {
   return (
     <View style={styles.container}>
-      <Root />
+      <Router>
+        <Suspense fallback={null}>
+          <SubRoot />
+        </Suspense>
+      </Router>
     </View>
   );
 }

@@ -4,13 +4,14 @@ import { Text } from "react-native";
 import { Router } from "./Router";
 import { Route1 } from "./Components/Route1";
 import { Route2 } from "./Components/Route2";
+import { Fallback } from "./Components/Fallback";
+import { useParams } from "react-router-dom";
 
 const AppRoutes = () => {
   const element = useRoutes([
     {
       path: "/route1",
       element: <Route1 />,
-      exact: true,
     },
     {
       path: "/route2/:routeId",
@@ -19,20 +20,14 @@ const AppRoutes = () => {
     },
     {
       path: "*",
-      element: <Text> FALLBACK!!!!</Text>,
+      element: <Fallback />,
     },
   ]);
   return element;
 };
 
-const Root = () => {
-  return (
-    <Router>
-      <Suspense fallback={null}>
-        <AppRoutes />
-      </Suspense>
-    </Router>
-  );
+const SubRoot = () => {
+  return <AppRoutes />;
 };
 
-export { Root };
+export { SubRoot };
